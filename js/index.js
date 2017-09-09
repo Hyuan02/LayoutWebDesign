@@ -1,0 +1,17 @@
+// JavaScript Document
+$(document).ready(function(){
+	$("#slide img eq:(0)").addclass("ativo").show();
+	var texto = $(".ativo").attr("alt");
+	$("#slide").prepend("<p>" + texto + "</p>");
+})
+setInterval(slide,3000);
+function slide(){
+		if($(".ativo").next().size()){
+			$(".ativo").fadeOut().removeClass("ativo").next().fadeIn().addClass("ativo");
+			}
+		else {
+			$(".ativo").fadeOut().removeClass("ativo");
+			$("#slide img:eq(0)").fadeIn().addClass("ativo");
+			}
+	}
+
